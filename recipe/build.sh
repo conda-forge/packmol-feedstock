@@ -1,9 +1,10 @@
 #!/bin/bash
+set -euxo pipefail
+rm -rf build || true
+mkdir build
+cd build
 
-sed -i.bak 's|FORTRAN=/usr/bin/gfortran|FORTRAN=${GFORTRAN}|g' Makefile
+cmake ${SRC_DIR} ${CMAKE_ARGS}
 
-chmod +x configure
-./configure
 make
-mkdir -p ${PREFIX}/bin
-cp packmol ${PREFIX}/bin/
+make install
