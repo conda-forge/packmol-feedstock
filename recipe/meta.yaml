@@ -1,5 +1,5 @@
-{% set version = "20.2.2" %}
-{% set sha256 = "129cc1b7e6b00c1740c5c6f285a2c6207e18f05cdeb71af8107c3fedf48f23de" %}
+{% set version = "20.4.1" %}
+{% set sha256 = "a7f3333f01037b088dc9701eae2cc46e2cc6a784554df16fc61a1a07c52e87b9" %}
 
 package:
   name: packmol
@@ -10,7 +10,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
 
 requirements:
