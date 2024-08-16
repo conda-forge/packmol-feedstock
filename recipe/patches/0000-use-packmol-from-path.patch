@@ -1,0 +1,17 @@
+diff --git a/testing/runtests.jl b/testing/runtests.jl
+index 2a80016..bbfff58 100644
+--- a/testing/runtests.jl
++++ b/testing/runtests.jl
+@@ -67,11 +67,10 @@ end
+ 
+ println("Running tests...")
+ if !isinteractive()
+-    packmol = joinpath(@__DIR__,"..","packmol")
+     for input_test in ARGS
+         print(" Running test $input_test ...")
+         log = IOBuffer()
+-        run(pipeline(`$packmol`; stdin=input_test, stdout=log))
++        run(pipeline(`packmol`; stdin=input_test, stdout=log))
+         if occursin("Success!", String(take!(log)))
+             check_mind(input_test)
+         else

@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/m3g/packmol/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - patches/0000-use-packmol-from-path.patch
 
 build:
   number: 0
