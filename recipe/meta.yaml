@@ -12,7 +12,7 @@ source:
     - patches/0000-use-packmol-from-path.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
