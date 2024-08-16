@@ -1,9 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-sed -i.bak 's|FORTRAN=/usr/bin/gfortran|FORTRAN=${GFORTRAN}|g' Makefile
+set -euxo pipefail
 
-chmod +x configure
-./configure
+rm -rf build || true
+
+mkdir build
+cd build
+
+cmake ${SRC_DIR} ${CMAKE_ARGS}
+
 make
-mkdir -p ${PREFIX}/bin
-cp packmol ${PREFIX}/bin/
+make install
+
+# copy tests 
+mkdir -p ${PREFIX}/share/packmol/tests
+echo cwd
+pwd
+ls -l
+echo "up one"
+ls -l ../
+cp -r testing/*  ${PREFIX}/share/packmol/tests

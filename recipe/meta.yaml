@@ -1,5 +1,5 @@
-{% set version = "20.2.2" %}
-{% set sha256 = "129cc1b7e6b00c1740c5c6f285a2c6207e18f05cdeb71af8107c3fedf48f23de" %}
+{% set version = "20.15.1" %}
+{% set sha256 = "bee21629379d2c5cd463f6350094057f8a85b990ab882b822149a9bebe5bda8a" %}
 
 package:
   name: packmol
@@ -10,18 +10,25 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('fortran') }}
+    - {{ stdlib("c") }}
+    - cmake
     - make
 
 test:
+  requires:
+    - julia
+  files:
+    - test.sh
   commands:
     - which packmol
+    - bash test.sh 
 
 about:
   home: http://m3g.iqm.unicamp.br/packmol
@@ -34,3 +41,5 @@ extra:
   recipe-maintainers:
     - bgruening
     - kyleabeauchamp
+    - mikemhenry
+    - mattwthompson
