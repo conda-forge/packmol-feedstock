@@ -12,6 +12,7 @@ cmake ${SRC_DIR} ${CMAKE_ARGS}
 make
 make install
 
+cd ../
 # copy tests 
 mkdir -p ${PREFIX}/share/packmol/tests
 echo cwd
