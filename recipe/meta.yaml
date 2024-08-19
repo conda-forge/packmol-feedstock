@@ -8,9 +8,11 @@ package:
 source:
   url: https://github.com/m3g/packmol/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - patches/0000-use-packmol-from-path.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -23,8 +25,13 @@ requirements:
     - make
 
 test:
+  requires:
+    - julia  # [not ppc64le]
+  files:
+    - test.sh
   commands:
     - which packmol
+    - bash test.sh  # [not ppc64le]
 
 about:
   home: http://m3g.iqm.unicamp.br/packmol
