@@ -26,12 +26,12 @@ requirements:
 
 test:
   requires:
-    - julia
+    - julia  # [not ppc64le]
   files:
     - test.sh
   commands:
     - which packmol
-    - bash test.sh 
+    - bash test.sh  # [not ppc64le]
 
 about:
   home: http://m3g.iqm.unicamp.br/packmol
