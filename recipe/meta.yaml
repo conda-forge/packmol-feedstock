@@ -1,5 +1,5 @@
-{% set version = "20.15.1" %}
-{% set sha256 = "bee21629379d2c5cd463f6350094057f8a85b990ab882b822149a9bebe5bda8a" %}
+{% set version = "20.15.2" %}
+{% set sha256 = "7afb96f4d6ab7704055a03b0c8c73eb713ae7b064881b8c5aa9866c191b0cc18" %}
 
 package:
   name: packmol
@@ -12,7 +12,7 @@ source:
     - patches/0000-use-packmol-from-path.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
