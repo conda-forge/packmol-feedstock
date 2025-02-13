@@ -8,7 +8,7 @@ cd ${PREFIX}/share/packmol/tests
 if [[ $(which juliaup) ]]; then
     echo "juliaup found"
 else
-    curl -fsSL https://install.julialang.org | sh
+    curl -fsSL https://install.julialang.org | sh -s -- -y
 fi
 
 # Run the tests
