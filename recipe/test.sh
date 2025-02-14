@@ -9,6 +9,11 @@ if [[ $(which juliaup) ]]; then
     echo "juliaup found"
 else
     curl -fsSL https://install.julialang.org | sh -s -- -y
+
+	# Doesn't hurt to add a path that doesn't exist
+	# OSX
+	export PATH=$PATH:/Users/runner/.juliaup/bin
+	# Linux
 	export PATH=$PATH:/home/conda/.juliaup/bin
 fi
 
