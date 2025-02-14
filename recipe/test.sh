@@ -9,7 +9,7 @@ if [[ $(which juliaup) ]]; then
     echo "juliaup found"
 else
     curl -fsSL https://install.julialang.org | sh -s -- -y
-	. /Users/runner/.zshrc || . /home/conda/.bashrc
+	export PATH=$PATH:/home/conda/.juliaup/bin
 fi
 
 # Run the tests
