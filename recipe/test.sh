@@ -4,6 +4,19 @@ set -exo pipefail
 
 cd ${PREFIX}/share/packmol/tests
 
+# Install Julia
+if [[ $(which juliaup) ]]; then
+    echo "juliaup found"
+else
+    curl -fsSL https://install.julialang.org | sh -s -- -y
+
+	# Doesn't hurt to add a path that doesn't exist
+	# OSX
+	export PATH=$PATH:/Users/runner/.juliaup/bin
+	# Linux
+	export PATH=$PATH:/home/conda/.juliaup/bin
+fi
+
 # Run the tests
 julia runtests.jl ./input_files/water_box.inp \
                   ./input_files/ieee_signaling.inp \
