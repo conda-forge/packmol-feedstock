@@ -10,6 +10,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - patches/0000-use-packmol-from-path.patch
+    - patches/0001-update-cmake-min-version.patch
 
 build:
   number: 0
