@@ -1,5 +1,5 @@
-{% set version = "20.16.1" %}
-{% set sha256 = "2984c57f3729ac9c2659a3ce88a4420f2fb5f422fec2b49a081bf0ac5474245c" %}
+{% set version = "21.0.3" %}
+{% set sha256 = "902e885e4b08ca728333b7cb56c9d8e46c4581f9f8d503ac42d13e24e00dc185" %}
 
 package:
   name: packmol
@@ -10,6 +10,7 @@ source:
   sha256: {{ sha256 }}
   patches:
     - patches/0000-use-packmol-from-path.patch
+    - patches/0001-update-cmake-min-version.patch
 
 build:
   number: 0

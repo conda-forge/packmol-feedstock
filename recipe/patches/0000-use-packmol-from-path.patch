@@ -1,25 +1,7 @@
-diff --git a/testing/runtests.jl b/testing/runtests.jl
-index 2a80016..bbfff58 100644
---- a/testing/runtests.jl
-+++ b/testing/runtests.jl
-@@ -67,11 +67,10 @@ end
- 
- println("Running tests...")
- if !isinteractive()
--    packmol = joinpath(@__DIR__,"..","packmol")
-     for input_test in ARGS
-         print(" Running test $input_test ...")
-         log = IOBuffer()
--        run(pipeline(`$packmol`; stdin=input_test, stdout=log))
-+        run(pipeline(`packmol`; stdin=input_test, stdout=log))
-         if occursin("Success!", String(take!(log)))
-             check_mind(input_test)
-         else
 diff --git a/testing/test_failed.sh b/testing/test_failed.sh
-index 9cf19f9..ae6471a 100755
 --- a/testing/test_failed.sh
 +++ b/testing/test_failed.sh
-@@ -12,7 +12,7 @@ if ! [ -f $1 ]; then
+@@ -13,7 +13,7 @@
      echo "Error: input file not found: $1"
      exit 1
  fi
@@ -28,3 +10,15 @@ index 9cf19f9..ae6471a 100755
  if ! [ -f $2 ]; then
      echo "Error: Log file not generated: $2"
      exit 1
+diff --git a/testing/runtests.jl b/testing/runtests.jl
+--- a/testing/runtests.jl
++++ b/testing/runtests.jl
+@@ -85,7 +85,7 @@
+         popat!(ARGS, packmol_arg + 1)
+         popat!(ARGS, packmol_arg)
+     else
+-        packmol = joinpath(@__DIR__,"..","packmol")
++        packmol = "packmol"
+     end
+     println(" Packmol path: $packmol")
+     for input_test in ARGS
