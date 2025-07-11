@@ -10,11 +10,23 @@ diff --git a/testing/test_failed.sh b/testing/test_failed.sh
  if ! [ -f $2 ]; then
      echo "Error: Log file not generated: $2"
      exit 1
+diff --git a/testing/runtests.jl b/testing/runtests.jl
+--- a/testing/runtests.jl
++++ b/testing/runtests.jl
+@@ -85,7 +85,7 @@
+         popat!(ARGS, packmol_arg + 1)
+         popat!(ARGS, packmol_arg)
+     else
+-        packmol = joinpath(@__DIR__,"..","packmol")
++        packmol = "packmol"
+     end
+     println(" Packmol path: $packmol")
+     for input_test in ARGS
 diff --git a/CMakeLists.txt b/CMakeLists.txt
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -1,4 +1,4 @@
 -cmake_minimum_required(VERSION 2.6)
-+cmake_minimum_required(VERSION 3.5)
++cmake_minimum_required(VERSION 3.10)
  project(packmol Fortran)
 
