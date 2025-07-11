@@ -10,3 +10,11 @@ diff --git a/testing/test_failed.sh b/testing/test_failed.sh
  if ! [ -f $2 ]; then
      echo "Error: Log file not generated: $2"
      exit 1
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 2.6)
++cmake_minimum_required(VERSION 3.5)
+ project(packmol Fortran)
+
