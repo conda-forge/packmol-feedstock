@@ -13,7 +13,7 @@ source:
     - patches/0001-update-cmake-min-version.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
