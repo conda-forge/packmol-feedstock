@@ -1,5 +1,5 @@
-{% set version = "21.1.2" %}
-{% set sha256 = "8999c01c5a6b25575d31019089ee7c056b421232bdc9f9d9a2a8799d76cf1184" %}
+{% set version = "21.1.4" %}
+{% set sha256 = "62e0bf9a5d0671ff1f03d57671c8bb91fd16790fcc07f0e68f1829b1f34fae48" %}
 
 package:
   name: packmol
