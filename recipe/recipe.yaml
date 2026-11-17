@@ -45,6 +45,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - lmiq
     - bgruening
     - kyleabeauchamp
     - mikemhenry
